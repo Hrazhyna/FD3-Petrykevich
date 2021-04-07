@@ -5,8 +5,28 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ishop</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-    
+    <div id="container"></div>
+    <script src="https://unpkg.com/react@15/dist/react.js"></script>
+    <script src="https://unpkg.com/react-dom@15/dist/react-dom.js"></script>
+
+    <script src="script.js"></script>
+    <script>
+        var nameStore = 'Витаминка';
+        var productsArr = [
+            { code: 1, url: 'img/01.jpg', name: 'Голубика', cost: 10, lot: 10, },
+            { code: 2, url: 'img/02.jpg', name: 'Клубника', cost: 4, lot: 15, },
+            { code: 3, url: 'img/03.jpg', name: 'Малина', cost: 6, lot: 5, },
+            { code: 4, url: 'img/04.jpg', name: 'Персик', cost: 8, lot: 13, },
+            { code: 5, url: 'img/04.jpg', name: 'Вишня', cost: 5, lot: 7, },
+        ];
+
+        ReactDOM.render(
+            React.createElement(PageStore, {store: nameStore, products: productsArr}),
+            document.getElementById('container')
+        );
+    </script>
 </body>
 </html>
