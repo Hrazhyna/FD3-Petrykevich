@@ -2,7 +2,7 @@ var PageStore = React.createClass({
     displayName: 'PageStore',
     render: function () {
 
-        var productsCode = [];
+        var productsPage = [];
         
         this.props.products.forEach(function (item) {
             var product = this.props.products[item];
