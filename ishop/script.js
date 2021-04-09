@@ -8,7 +8,7 @@ var PageStore = React.createClass({
             
             var productPage =
                 React.DOM.div({ key: product.code, className: 'Product' },
-                    React.DOM.div({ className: 'Photo' }, product.url),
+                    React.DOM.img({ src: product.url },),
                     React.DOM.div({ className: 'Info' },
                         React.DOM.p({ className: 'Name' }, product.name),
                         React.DOM.span({ className: 'Cost' }, product.cost),
