@@ -1,4 +1,43 @@
-.PageStore {
+body {
+  padding: 0px;
+  margin: 0px;
+}
+#container {
   width: 100%;
-  background-color: #bebbbb;
+}
+.PageStore {
+  width: 1000px;
+
+  margin: 0, auto;
+  background-color: rgb(194, 194, 194);
+}
+.Store {
+  text-align: center;
+  font-size: 40px;
+  font-style: italic;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #0a993a;
+  padding: 10px;
+  border: #c09de0 solid 1px;
+  border-radius: 20px;
+  background-color: #e9e4e4;
+}
+.Product {
+  display: flex;
+  margin: 20px;
+  padding: 10px;
+  border: #c09de0 solid 1px;
+  border-radius: 20px;
+  background-color: #e9e4e4;
+}
+.Photo {
+  width: 300px;
+  height: 199px;
+}
+.Name {
+  font-size: 30px;
+  color: rgb(141, 74, 110);
+}
+span {
+  margin-right: 200px;
 }

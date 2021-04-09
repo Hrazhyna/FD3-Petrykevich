@@ -4,8 +4,8 @@ var PageStore = React.createClass({
 
         var productsPage = [];
         
-        this.props.products.forEach(function (item) {
-            var product = this.props.products[item];
+        this.props.products.forEach(function (product) {
+            
             var productPage =
                 React.DOM.div({ key: product.code, className: 'Product' },
                     React.DOM.div({ className: 'Photo' }, product.url),
@@ -20,7 +20,7 @@ var PageStore = React.createClass({
 
         return React.DOM.div({ className: 'PageStore' },
             React.DOM.div({ className: 'Store' }, this.props.store ),
-            Reace.DOM.div({ className: 'Products'}, productsPage ),
+            React.DOM.div({ className: 'Products'}, productsPage ),
         );
     },
     
