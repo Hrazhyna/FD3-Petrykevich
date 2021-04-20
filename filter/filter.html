@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filter</title>
+    <link rel="stylesheet" type="text/css" href="style-filter.css">
+</head>
+<body>
+    <div id="container"></div>
+
+    <script src="https://unpkg.com/react@15/dist/react.js"></script>
+    <script src="https://unpkg.com/react-dom@15/dist/react-dom.js"></script>
+
+    <script src="script-filter.js"></script>
+
+    <script>
+        var wordArr = 
+            [
+             "частнопредпринимательский", "переосвидетельствоваться", "субстанционализироваться", "интернационализироваться",
+             "человеконенавистничество", "высокопревосходительство", "одиннадцатиклассница", "делопроизводительница",
+             "неудовлетворительно", "соответственно", "исключительно", "водогрязелечение",
+            ];
+        // var wordArr = [
+        //         {num: 1, name: 'частнопредпринимательский',},
+        //         { num: 2, name: 'переосвидетельствоваться', },
+        //         { num: 3, name: 'субстанционализироваться', },
+        //         { num: 4, name: 'человеконенавистничество', },
+        //         { num: 5, name: 'высокопревосходительство',},
+        //         { num: 6, name: 'одиннадцатиклассница', },
+        //     ];
+
+        ReactDOM.render(
+            React.createElement(PageWord, {words: wordArr}),
+            document.getElementById('container')
+        );
+    </script>
+</body>
+</html>

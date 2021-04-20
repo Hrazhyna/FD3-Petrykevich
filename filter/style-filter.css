@@ -1,0 +1,13 @@
+.PageWord {
+  width: 500px;
+  height: 500px;
+  background-attachment: rgb(128, 124, 124);
+}
+.PageWord .WinWord {
+  width: 250px;
+}
+input[type="reset"] {
+  border-radius: 10px;
+  margin-left: 10px;
+  background-color: #e4ecea;
+}

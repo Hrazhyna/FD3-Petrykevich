@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ishop</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <div id="container"></div>
+
+    <script src="https://unpkg.com/react@15/dist/react.js"></script>
+    <script src="https://unpkg.com/react-dom@15/dist/react-dom.js"></script>
+
+    <script src="script.js"></script>
+    <script>
+        var pointStore = ['Name', 'Price', 'URL', 'Quantity', 'Control'];
+        var productsArr = [
+            { code: 1, url: 'htpp://lll.com', name: 'product1', cost: 30, lot: 20, },
+            { code: 2, url: 'htpp://xox.com', name: 'product2', cost: 40, lot: 15, },
+            { code: 3, url: 'htpp://eee.com', name: 'product3', cost: 80, lot: 49, },
+            { code: 4, url: 'htpp://lol.com', name: 'product4', cost: 90, lot: 8, },
+            { code: 5, url: 'htpp://a4.com', name: 'product5', cost: 120, lot: 22, },
+            { code: 6, url: 'htpp://weg.com', name: 'product5', cost: 50, lot: 3, },
+        ];
+
+        ReactDOM.render(
+            React.createElement(PageStore, { point: pointStore, products: productsArr }),
+            document.getElementById('container')
+        );
+    </script>
+</body>
+</html>
