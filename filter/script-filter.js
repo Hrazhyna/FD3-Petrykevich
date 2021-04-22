@@ -9,20 +9,20 @@ var PageWord = React.createClass({
     
     getInitialState: function () {
         return {
-            list: this.myWords,
+            list: this.myWords, // не видно массива
             sorted: false,
             filtered: ' ',
             processedArr: [],
         };
     },
     inputTextChanged: function (EO) {
-        setState({ filtered: EO.target.value });
+        this.setState({ filtered: EO.target.value }, this.processedList);
     },
     chekBoxClicked: function (EO) {
-        setState({ sorted: EO.target.checked }, this.processedList);
+        this.setState({ sorted: EO.target.checked }, this.processedList);
     },
     processedList(){
-        let result = this.props.words.slice();
+        let result = this.myWords.slice(); //
          if (this.state.filtered) {
             result = result.filter(w => w.indexOf(filtered) != -1);
         };
@@ -33,22 +33,28 @@ var PageWord = React.createClass({
         
     },
     resetCliked: function (EO) {
-        setState({sorted: EO.target.false, });
+        this.setState({sorted: EO.target.false, filtered: EO.target.null});
     },
     render: function () {
-
-        var myWords = [];
-        for (let word of this.props.words) {
-            React.DOM.option({ className: 'Word' }, word);
-            myWords.push(word);
-        };
         
-
-        return React.DOM.div({ className: 'PageWord' },
-            React.DOM.input({ type: 'checkbox', onClick: this.chekBoxClicked,}),
+        var myWords = [];
+        // this.setState = ({list: myWords}); 
+        
+        this.props.words.forEach(function (word, index) { // props
+            var w =
+                React.DOM.option({key: index}, word)
+            myWords.push(w)
+        });
+            
+        
+        return React.DOM.form({ className: 'PageWord' },
+            React.DOM.div({ className: 'Input' },
+                 React.DOM.input({ type: 'checkbox', onClick: this.chekBoxClicked,}),
             React.DOM.input({ type: 'text', value: this.state.filtered, onChange: this.inputTextChanged }),
             React.DOM.input({ type: 'reset', onClick: this.resetCliked, }),
-            React.DOM.select({ className: 'WinWord'}, this.state.list)
+            ),
+            React.DOM.select({ className: 'WinWord', size: 5, },  myWords),                               // myWords
+            
         );
     },
 });
